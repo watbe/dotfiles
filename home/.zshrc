@@ -14,6 +14,7 @@ alias ls="ls -la"
 alias install="sudo pacman -S"
 alias dotfiles="cd ~/dotfiles && git commit -a && git push"
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+alias hm="homeshick"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
