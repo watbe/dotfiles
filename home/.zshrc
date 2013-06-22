@@ -15,6 +15,13 @@ alias install="sudo pacman -S"
 alias dotfiles="cd $HOME/.homesick/repos/dotfiles && git commit -a && git push && cd -"
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 alias hm="homeshick"
+alias v="vim"
+alias pacman="sudo pacman --color always"
+alias pac="pacman"
+
+# Wireless
+alias resnet-status="sudo netctl status wlp4s0-Resnet"
+alias resnet-start="sudo netctl start wlp4s0-Resnet"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -51,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl
+export EDITOR="vim"
 
 # Start up
 # Check for homeshick refresh
