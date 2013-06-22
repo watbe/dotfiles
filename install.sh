@@ -1,7 +1,7 @@
 # bash shell
-ln -s .bashrc ~/.bashrc 
-ln -s .bash_profile ~/.bash_profile 
+ln .bashrc ~/.bashrc 
+ln .bash_profile ~/.bash_profile 
 
 # zsh shell 
-ln -s .zshrc ~/.zshrc 
-ln -s .zprofile ~/.zprofile
+ln .zshrc ~/.zshrc 
+ln .zprofile ~/.zprofile
