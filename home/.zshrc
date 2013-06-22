@@ -5,14 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -la"
 alias install="sudo pacman -S"
-alias dotfiles="cd ~/dotfiles && git commit -a && git push"
+alias dotfiles="cd $HOME/.homesick/repos/dotfiles && git commit -a && git push && cd -"
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 alias hm="homeshick"
 
@@ -45,9 +45,13 @@ alias hm="homeshick"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git archlinux colorize cp django pip svn python github git-extras theme virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl
+
+# Start up
+# Check for homeshick refresh
+homeshick --quiet refresh
