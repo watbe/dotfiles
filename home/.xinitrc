@@ -16,5 +16,8 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
+# load xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 # start awesome!!!
 exec awesome
