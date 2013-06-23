@@ -63,3 +63,11 @@ export EDITOR="vim"
 # Start up
 # Check for homeshick refresh
 homeshick --quiet refresh
+
+# Enable 256 color
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
+
