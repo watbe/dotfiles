@@ -10,7 +10,7 @@ ZSH_THEME="af-magic"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="ls -la"
+alias l="ls -la"
 alias install="sudo pacman -S"
 alias dotfiles="cd $HOME/.homesick/repos/dotfiles && git commit -a && git push && cd -"
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
