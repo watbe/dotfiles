@@ -4,3 +4,6 @@
 [submodule "home/.config/awesome"]
 	path = home/.config/awesome
 	url = git://github.com/copycat-killer/awesome-copycats.git
+[submodule "home/.vim/bundles/vim-sensible"]
+	path = home/.vim/bundles/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git

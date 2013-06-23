@@ -71,3 +71,5 @@ else
         export TERM='xterm-color'
 fi
 
+# turns on autoscroll in firefox (prevents sync updates)
+echo "\\nuser_pref("general.autoScroll", "true");">>$HOME/.mozilla/firefox/*.default/prefs.js
