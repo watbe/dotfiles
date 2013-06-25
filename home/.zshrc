@@ -20,6 +20,8 @@ alias pacman="sudo pacman --color always"
 alias pac="pacman"
 alias suspend="sudo pm-suspend"
 alias sleep="sleep 1 && xset dpms force off"
+alias studio="$HOME/aur/android-studio/src/android-studio/bin/./studio.sh &"
+alias idea="$HOME/idea/bin/./idea.sh &"
 
 # Screen Brightness
 alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""

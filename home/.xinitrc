@@ -16,7 +16,7 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-xinput --set-prop 'Logitech Unifying Device. Wireless PID:101a' 'Device Accel Profile' 20
+xinput --set-prop 'Logitech Unifying Device. Wireless PID:101a' 'Device Accel Profile' 10
 
 # load xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
