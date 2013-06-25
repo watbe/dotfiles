@@ -18,6 +18,13 @@ alias hm="homeshick"
 alias v="vim"
 alias pacman="sudo pacman --color always"
 alias pac="pacman"
+alias suspend="sudo pm-suspend"
+alias sleep="sleep 1 && xset dpms force off"
+
+# Screen Brightness
+alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""
+alias smed="sudo sh -c \"echo 7 > /sys/class/backlight/acpi_video0/brightness\""
+alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
 
 # Wireless
 alias resnet-status="sudo netctl status wlp4s0-Resnet"
@@ -63,6 +70,9 @@ export EDITOR="vim"
 # Start up
 # Check for homeshick refresh
 homeshick --quiet refresh
+
+# Mount drives...
+#sudo mount -rw -t ntfs-3g /dev/sda3 /mnt/data
 
 # Enable 256 color
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
