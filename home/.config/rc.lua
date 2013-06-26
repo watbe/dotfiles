@@ -492,12 +492,12 @@ netdownicon = wibox.widget.imagebox()
 netdownicon:set_image(beautiful.widget_netdown)
 netdownicon.align = "middle"
 netdowninfo = wibox.widget.textbox()
-vicious.register(netdowninfo, vicious.widgets.net, green .. "${wlp4s0 down_kb}" .. coldef, 1)
+vicious.register(netdowninfo, vicious.widgets.net, green .. "${wlan0 down_kb}" .. coldef, 1)
 netupicon = wibox.widget.imagebox()
 netupicon:set_image(beautiful.widget_netup)
 netupicon.align = "middle"
 netupinfo = wibox.widget.textbox()
-vicious.register(netupinfo, vicious.widgets.net, red .. "${wlp4s0 up_kb}" .. coldef, 1)
+vicious.register(netupinfo, vicious.widgets.net, red .. "${wlan0 up_kb}" .. coldef, 1)
 
 -- Memory widget
 memicon = wibox.widget.imagebox()
@@ -653,8 +653,8 @@ for s = 1, screen.count() do
     right_layout:add(mygmailimg)
     right_layout:add(mygmail)
     right_layout:add(spacer)     
-    right_layout:add(baticon)
-    right_layout:add(batwidget)
+--    right_layout:add(baticon)
+--    right_layout:add(batwidget)
     --right_layout:add(spacer)
     right_layout:add(clockicon)
     right_layout:add(mytextclock)

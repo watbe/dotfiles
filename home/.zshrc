@@ -32,6 +32,9 @@ alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\"
 alias resnet-status="sudo netctl status wlp4s0-Resnet"
 alias resnet-start="sudo netctl start wlp4s0-Resnet"
 
+# ssh aliases
+alias aegir1="ssh -D 8080 -i $HOME/.ssh/aegir1.pem ubuntu@aegir1.lab273.com"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -82,6 +85,3 @@ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 else
         export TERM='xterm-color'
 fi
-
-# turns on autoscroll in firefox (prevents sync updates)
-echo "\\nuser_pref("general.autoScroll", "true");">>$HOME/.mozilla/firefox/*.default/prefs.js
