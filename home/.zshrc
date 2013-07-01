@@ -10,23 +10,41 @@ ZSH_THEME="af-magic"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l="ls -la"
-alias install="sudo pacman -S"
+alias l="ls -lh"
+alias ll="ls -la"
 alias dotfiles="cd $HOME/.homesick/repos/dotfiles && git commit -a && git push && cd -"
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 alias hm="homeshick"
 alias v="vim"
+alias sv="sudo vim"
+
+# Pacman 
 alias pacman="sudo pacman --color always"
 alias pac="pacman"
+alias install="sudo pacman -S"
+alias remove="pacman -Rs"
+alias aur="yaourt"
+
+# Power management
 alias suspend="sudo pm-suspend"
 alias sleep="sleep 1 && xset dpms force off"
-alias studio="$HOME/aur/android-studio/src/android-studio/bin/./studio.sh &"
-alias idea="$HOME/idea/bin/./idea.sh &"
+
+# ZSHRC management
+alias sz='source ~/.zshrc'
+alias ez='vim ~/.zshrc'
+
+# Programs
+#alias studio="$HOME/aur/android-studio/src/android-studio/bin/./studio.sh &"
+alias studio="/opt/android-studio/bin/./studio.sh &"
+#alias idea="$HOME/idea/bin/./idea.sh &"
+alias idea="/usr/share/intellij-idea-ultimate-edition/bin/./idea.sh &"
 
 # Screen Brightness
-alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""
-alias smed="sudo sh -c \"echo 7 > /sys/class/backlight/acpi_video0/brightness\""
-alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
+if [[ $HOST = nick ]] ; then
+	alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""
+	alias smed="sudo sh -c \"echo 7 > /sys/class/backlight/acpi_video0/brightness\""
+	alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
+fi
 
 # Wireless
 alias resnet-status="sudo netctl status wlp4s0-Resnet"
@@ -34,6 +52,14 @@ alias resnet-start="sudo netctl start wlp4s0-Resnet"
 
 # ssh aliases
 alias aegir1="ssh -D 8080 -i $HOME/.ssh/aegir1.pem ubuntu@aegir1.lab273.com"
+
+# better ping
+alias ping="mtr"
+
+# inserts sudo at the start of the line
+insert_sudo () { zle beginning-of-line; zle -U "sudo " }
+zle -N insert-sudo insert_sudo
+bindkey "^[s" insert-sudo
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -85,3 +111,6 @@ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 else
         export TERM='xterm-color'
 fi
+
+# shortens cd <dir> to just <dir>
+setopt AUTO_CD
