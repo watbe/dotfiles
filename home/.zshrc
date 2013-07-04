@@ -23,7 +23,8 @@ ZSH_THEME="af-magic"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
+unsetopt correct
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -120,4 +121,4 @@ else
 fi
 
 # shortens cd <dir> to just <dir>
-setopt AUTO_CD
+# setopt AUTO_CD
