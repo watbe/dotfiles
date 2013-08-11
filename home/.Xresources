@@ -22,7 +22,7 @@
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           Terminus:style=Regular:size=10
+xterm*faceName:           Lat2-Terminus16:style=Regular:size=10
 xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
 xterm*dynamicColors:      true
 xterm*utf8:               2

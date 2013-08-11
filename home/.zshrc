@@ -42,6 +42,7 @@ plugins=(git archlinux colorize cp django pip svn python github git-extras theme
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias e="exit"
 alias l="ls -lh"
 alias ll="ls -la"
 alias dotfiles="cd $HOME/.homesick/repos/dotfiles && git commit -a && git push && cd -"
@@ -86,6 +87,7 @@ alias resnet-start="sudo netctl start wlp4s0-Resnet"
 
 # ssh aliases
 alias aegir1="ssh -D 8080 -i $HOME/.ssh/aegir1.pem ubuntu@aegir1.lab273.com"
+alias burg="ssh -i $HOME/.ssh/burg.pem ubuntu@burgmann.anu.edu.au"
 
 # better ping
 alias ping="mtr"
