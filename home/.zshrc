@@ -52,6 +52,7 @@ alias v="vim"
 alias sv="sudo vim"
 alias security="keychain"
 alias deploy-wwbpm="$HOME/dotfiles/scripts/./deploy-wwbpm.sh"
+alias x="(xterm &)>/dev/null"
 
 # Pacman 
 alias pacman="sudo pacman --color always"
