@@ -22,16 +22,48 @@
 ! xterm ----------------------------------------------------------------------
 
 xterm*VT100.geometry:     80x25
-xterm*faceName:           Lat2-Terminus16:style=Regular:size=10
-xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*faceName:           UbuntuMono:style=Regular:size=11
 xterm*dynamicColors:      true
 xterm*utf8:               2
 xterm*eightBitInput:      true
-xterm*saveLines:          512
+xterm*saveLines:          2048
 xterm*scrollKey:          true
 xterm*scrollTtyOutput:    false
-xterm*scrollBar:          true
+xterm*scrollBar:          false
 xterm*rightScrollBar:     true
 xterm*jumpScroll:         true
 xterm*multiScroll:        true
 xterm*toolBar:            false
+
+! urxvt ---------
+urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp' >> ~/.Xresources
+URxvt*depth: 32
+URxvt*scrollBar: false
+URxvt*font: xft:UbuntuMono:size=11
+URxvt*loginShell: true
+URxvt*perl-ext-common: default,matcher
+URxvt*url-launcher: /usr/bin/xdg-open
+URxvt*matcher.button: 1
+
+*urxvt*background: #101010
+*urxvt*foreground: #d0d0d0
+*urxvt*cursorColor: #d0d0d0
+*urxvt*color0: #101010
+*urxvt*color1: #960050
+*urxvt*color2: #66aa11
+*urxvt*color3: #c47f2c
+*urxvt*color4: #30309b
+*urxvt*color5: #7e40a5
+*urxvt*color6: #3579a8
+*urxvt*color7: #9999aa
+*urxvt*color8: #303030
+*urxvt*color9: #ff0090
+*urxvt*color10: #80ff00
+*urxvt*color11: #ffba68
+*urxvt*color12: #5f5fee
+*urxvt*color13: #bb88dd
+*urxvt*color14: #4eb4fa
+*urxvt*color15: #d0d0d0
+URxvt*letterSpace: -1
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~

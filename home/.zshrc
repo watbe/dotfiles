@@ -60,6 +60,7 @@ alias pac="pacman"
 alias install="sudo pacman -S"
 alias remove="pacman -Rs"
 alias aur="yaourt"
+alias update="yaourt -Syua"
 
 # Power management
 alias suspend="sudo pm-suspend"
@@ -117,11 +118,29 @@ homeshick --quiet refresh
 #sudo mount -rw -t ntfs-3g /dev/sda3 /mnt/data
 
 # Enable 256 color
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
-else
-        export TERM='xterm-color'
-fi
+#if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+#        export TERM='xterm-256color'
+#else
+#        export TERM='xterm-color'
+#fi
+export TERM='rxvt-unicode'
 
+export MARKPATH=$HOME/.marks
+function jump { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+    rm -i "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+alias j="jump"
 # shortens cd <dir> to just <dir>
 # setopt AUTO_CD
+#
+alias xterm="urxvt"
