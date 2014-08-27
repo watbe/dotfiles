@@ -45,7 +45,7 @@ URxvt*perl-ext-common: default,matcher
 URxvt*url-launcher: /usr/bin/xdg-open
 URxvt*matcher.button: 1
 
-*urxvt*background: #101010
+*urxvt*background: [85]#000000
 *urxvt*foreground: #d0d0d0
 *urxvt*cursorColor: #d0d0d0
 *urxvt*color0: #101010
@@ -64,6 +64,8 @@ URxvt*matcher.button: 1
 *urxvt*color13: #bb88dd
 *urxvt*color14: #4eb4fa
 *urxvt*color15: #d0d0d0
+
 URxvt*letterSpace: -1
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
+URxvt*colorUL: #4682B4

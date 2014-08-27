@@ -31,6 +31,7 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
  end 
 
+awful.util.spawn_with_shell("xcompmgr -cF &")
 run_once("unclutter -idle 10")
 
 -- }}}
