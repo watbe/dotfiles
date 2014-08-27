@@ -12,3 +12,8 @@ Using homeshick. See https://github.com/technicalpickles/homesick
 ## reminders to self
 
 symlink `~/.homesick/repos/dotfiles` to `~/dotfiles` for ease of use
+
+## dependencies
+
+`xcompmgr` for transparency
+`awesome` window manager
