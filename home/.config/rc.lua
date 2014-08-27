@@ -29,9 +29,9 @@ function run_once(cmd)
      findme = cmd:sub(0, firstspace-1)
   end
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+  awful.util.spawn_with_shell("xcompmgr")
  end 
 
-awful.util.spawn_with_shell("xcompmgr -cF &")
 run_once("unclutter -idle 10")
 
 -- }}}
