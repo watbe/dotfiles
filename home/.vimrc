@@ -6,7 +6,7 @@ set autoindent
 "set mouse=a
 let g:rehash256 = 1
 
-colorscheme Tomorrow-Night
+colorscheme monokai
 
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
