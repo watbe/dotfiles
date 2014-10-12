@@ -112,7 +112,7 @@ export EDITOR="vim"
 
 # Start up
 # Check for homeshick refresh
-homeshick --quiet refresh
+source $HOME/.homesick/repos/homeshick/homeshick.sh
 
 # Mount drives...
 #sudo mount -rw -t ntfs-3g /dev/sda3 /mnt/data
@@ -144,3 +144,6 @@ alias j="jump"
 # setopt AUTO_CD
 #
 alias xterm="urxvt"
+
+# For screen to work properly with vim
+export TERM=xterm-256color

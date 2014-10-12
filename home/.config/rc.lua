@@ -707,7 +707,7 @@ globalkeys = awful.util.table.join(
 
     -- Capture a screenshot
     awful.key({ altkey }, "p", function() awful.util.spawn_with_shell("suspend") end),
-    awful.key({ }, "Print", function () awful.util.spawn_with_shell("cd ~/screenshots; python ~/dotfiles/scripts/screenshot.py") end),
+    awful.key({ altkey }, "Print", function () awful.util.spawn_with_shell("cd ~/screenshots; python ~/dotfiles/scripts/screenshot.py") end),
 
 
     -- Move clients
