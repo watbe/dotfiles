@@ -24,4 +24,4 @@ xset m 0 0
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # start awesome!!!
-exec awesome
+# exec awesome
