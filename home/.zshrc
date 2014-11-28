@@ -170,3 +170,6 @@ reply=($(ls $MARKPATH))
 }
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
+
+# mouse sensitivity
+xset m 0 0 
