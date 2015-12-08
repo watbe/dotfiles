@@ -5,3 +5,5 @@
 	default = simple
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[core]
+	excludesfile = /home/ubuntu/.gitignore_global

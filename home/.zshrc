@@ -37,7 +37,7 @@ unsetopt correct
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux colorize cp django pip svn python github git-extras theme virtualenv virtualenvwrapper)
+plugins=(git colorize cp github git-extras theme ruby rails coffee bundler docker golang postgres rale rbenv redis-cli screen ssh-agent sudo vi-mode)
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -100,14 +100,14 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
 # VirtualENV stuff
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:$HOME/.gem/ruby/2.0.0/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:$HOME/.gem/ruby/2.0.0/bin:$HOME/go/bin
 export EDITOR="vim"
 
 # Start up
