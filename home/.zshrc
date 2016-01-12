@@ -41,8 +41,6 @@ plugins=(git colorize cp github git-extras theme ruby rails coffee bundler docke
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -73,13 +71,6 @@ alias sleep="sleep 1 && xset dpms force off"
 # ZSHRC management
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
-
-# Screen Brightness
-if [[ $HOST = nick ]] ; then
-	alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""
-	alias smed="sudo sh -c \"echo 7 > /sys/class/backlight/acpi_video0/brightness\""
-	alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
-fi
 
 export TERM='rxvt-unicode'
 
@@ -118,8 +109,6 @@ reply=($(ls $MARKPATH))
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 alias j="jump"
 
 export GOPATH=$HOME/go
@@ -140,9 +129,8 @@ export PATH=$PATH:$HOME/go-src/go/bin
 bindkey -M viins 'jj' vi-cmd-mode
 
 # mouse sensitivity
-xset m 0 0
+# xset m 0 0
 
-export GOPATH=$HOME/go
 
 alias service="sudo systemctl"
 alias pmixer="pavucontrol"
