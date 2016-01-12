@@ -7,3 +7,4 @@
 	insteadOf = https://github.com/
 [core]
 	excludesfile = /home/ubuntu/.gitignore_global
+	autocrlf = input

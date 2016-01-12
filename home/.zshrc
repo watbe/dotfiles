@@ -39,6 +39,8 @@ unsetopt correct
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git colorize cp github git-extras theme ruby rails coffee bundler docker golang postgres rale rbenv redis-cli screen ssh-agent sudo vi-mode)
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -95,10 +97,9 @@ export EDITOR="vim"
 # Check for homeshick refresh
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
-# shortens cd <dir> to just <dir>
-# setopt AUTO_CD
-#
-alias xterm="urxvt"
+# switch to stop display sleep
+alias nosleep="xset s off; xset -dpms"
+alias yessleep="xset s on; xset +dpms"
 
 # For screen to work properly with vim
 export TERM=xterm-256color
@@ -126,6 +127,7 @@ reply=($(ls $MARKPATH))
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
+<<<<<<< HEAD
 alias j="jump"
 
 export GOPATH=$HOME/go
@@ -144,3 +146,8 @@ export PATH=$PATH:$HOME/go-src/go/bin
 
 # Map 'jj' to vi-mode
 bindkey -M viins 'jj' vi-cmd-mode
+
+export GOPATH=$HOME/go
+
+alias service="sudo systemctl"
+alias pmixer="pavucontrol"

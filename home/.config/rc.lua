@@ -81,7 +81,7 @@ active_theme = themes .. "/multicolor"
 -- Themes define colours, icons, and wallpapers
 beautiful.init(active_theme .. "/theme.lua")
 
-terminal = "xterm"
+terminal = "urxvt"
 editor = os.getenv("EDITOR")
 editor_cmd = terminal .. " -e vim"
 gui_editor = "geany -ps"
@@ -131,8 +131,8 @@ end
 
 -- Define a tag table which hold all screen tags.
 tags = {
-       names = { "term", "web", "ide", "games", "files", "other" },       
-       layout = { layouts[1], layouts[3], layouts[4], layouts[1], layouts[7], layouts[1] } 
+       names = { "term", "web", "dotabuff", "trackdota", "entertainment", "other" },
+       layout = { layouts[3], layouts[3], layouts[9], layouts[9], layouts[1], layouts[1] } 
        }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
@@ -335,7 +335,7 @@ vicious.register(weatherwidget, vicious.widgets.weather,
             end
             return "" .. lightpurple .. args["{sky}"] .. " @ " .. args["{tempc}"] .. "°C" .. coldef .. ""
         end
-    end, 1800, "ICAO-CODE-GOES-HERE" )
+    end, 1800, "YSSY" )
 
 --[[ /home fs widget
 fshicon = wibox.widget.imagebox()
@@ -493,12 +493,12 @@ netdownicon = wibox.widget.imagebox()
 netdownicon:set_image(beautiful.widget_netdown)
 netdownicon.align = "middle"
 netdowninfo = wibox.widget.textbox()
-vicious.register(netdowninfo, vicious.widgets.net, green .. "${wlan0 down_kb}" .. coldef, 1)
+vicious.register(netdowninfo, vicious.widgets.net, green .. "${eno1 down_kb}" .. coldef, 1)
 netupicon = wibox.widget.imagebox()
 netupicon:set_image(beautiful.widget_netup)
 netupicon.align = "middle"
 netupinfo = wibox.widget.textbox()
-vicious.register(netupinfo, vicious.widgets.net, red .. "${wlan0 up_kb}" .. coldef, 1)
+vicious.register(netupinfo, vicious.widgets.net, red .. "${eno1 up_kb}" .. coldef, 1)
 
 -- Memory widget
 memicon = wibox.widget.imagebox()
@@ -706,9 +706,7 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
 
     -- Capture a screenshot
-    awful.key({ altkey }, "p", function() awful.util.spawn_with_shell("suspend") end),
-    awful.key({ altkey }, "Print", function () awful.util.spawn_with_shell("cd ~/screenshots; python ~/dotfiles/scripts/screenshot.py") end),
-
+    awful.key({ altkey }, "Print", function () awful.util.spawn_with_shell("/usr/bin/GtkGrab") end),
 
     -- Move clients
     awful.key({ altkey }, "Next",  function () awful.client.moveresize( 1,  1, -2, -2) end),
