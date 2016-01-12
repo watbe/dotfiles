@@ -41,6 +41,8 @@ plugins=(git colorize cp github git-extras theme ruby rails coffee bundler docke
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -79,23 +81,12 @@ if [[ $HOST = nick ]] ; then
 	alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
 fi
 
-# better ping
-alias ping="mtr"
+export TERM='rxvt-unicode'
 
-# VirtualENV stuff
-#VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#export WORKON_HOME=~/.virtualenvs
-#source /usr/bin/virtualenvwrapper.sh
+alias j="jump"
 
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:$HOME/.gem/ruby/2.0.0/bin:$HOME/go/bin
-export EDITOR="vim"
-
-# Start up
-# Check for homeshick refresh
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+alias xterm="urxvt"
+alias fm="pcmanfm &"
 
 # switch to stop display sleep
 alias nosleep="xset s off; xset -dpms"
@@ -128,6 +119,7 @@ compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 alias j="jump"
 
 export GOPATH=$HOME/go
@@ -146,6 +138,9 @@ export PATH=$PATH:$HOME/go-src/go/bin
 
 # Map 'jj' to vi-mode
 bindkey -M viins 'jj' vi-cmd-mode
+
+# mouse sensitivity
+xset m 0 0
 
 export GOPATH=$HOME/go
 
