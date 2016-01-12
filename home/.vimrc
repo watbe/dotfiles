@@ -1,7 +1,7 @@
 call pathogen#infect()
 syntax on
 syntax enable
-set shiftwidth=2 tabstop=2 expandtab 
+set shiftwidth=2 tabstop=2 expandtab
 set autoindent
 "set mouse=a
 let g:rehash256 = 1
@@ -9,7 +9,7 @@ let g:vim_markdown_folding_disabled=1
 
 let mapleader=","
 
-colorscheme monokai
+colorscheme badwolf
 
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
@@ -30,6 +30,8 @@ map <C-K> <C-W>k<C-W>_
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+" clear search highlight
+nnoremap <space><space> :nohlsearch<CR>
 
 set number              " show line numbers
 set showcmd             " show command in bottom bar
@@ -73,3 +75,15 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" badwolf specific
+let g:badwolf_darkgutter = 1
+
+" clear background color (bug)
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+

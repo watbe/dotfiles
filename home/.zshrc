@@ -70,12 +70,6 @@ alias sleep="sleep 1 && xset dpms force off"
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 
-# Programs
-#alias studio="$HOME/aur/android-studio/src/android-studio/bin/./studio.sh &"
-alias studio="/opt/android-studio/bin/./studio.sh &"
-#alias idea="$HOME/idea/bin/./idea.sh &"
-alias idea="/usr/share/intellij-idea-ultimate-edition/bin/./idea.sh &"
-
 # Screen Brightness
 if [[ $HOST = nick ]] ; then
 	alias smin="sudo sh -c \"echo 0 > /sys/class/backlight/acpi_video0/brightness\""
@@ -83,21 +77,8 @@ if [[ $HOST = nick ]] ; then
 	alias smax="sudo sh -c \"echo 15 > /sys/class/backlight/acpi_video0/brightness\""
 fi
 
-# Wireless
-alias resnet-status="sudo netctl status wlp4s0-Resnet"
-alias resnet-start="sudo netctl start wlp4s0-Resnet"
-
-# ssh aliases
-alias aegir1="ssh -D 8080 -i $HOME/.ssh/aegir1.pem ubuntu@aegir1.lab273.com"
-alias burg="ssh -i $HOME/.ssh/burg.pem ubuntu@burgmann.anu.edu.au"
-
 # better ping
 alias ping="mtr"
-
-# inserts sudo at the start of the line
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
 
 # VirtualENV stuff
 #VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
@@ -114,32 +95,6 @@ export EDITOR="vim"
 # Check for homeshick refresh
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
-# Mount drives...
-#sudo mount -rw -t ntfs-3g /dev/sda3 /mnt/data
-
-# Enable 256 color
-#if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-#        export TERM='xterm-256color'
-#else
-#        export TERM='xterm-color'
-#fi
-export TERM='rxvt-unicode'
-
-export MARKPATH=$HOME/.marks
-function jump { 
-    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
-}
-function mark { 
-    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
-}
-function unmark { 
-    rm -i "$MARKPATH/$1"
-}
-function marks {
-    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
-}
-
-alias j="jump"
 # shortens cd <dir> to just <dir>
 # setopt AUTO_CD
 #
@@ -171,5 +126,21 @@ reply=($(ls $MARKPATH))
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
-# mouse sensitivity
-xset m 0 0 
+alias j="jump"
+
+export GOPATH=$HOME/go
+export GOROOT=$HOME/go-src/go
+#unset GOROOT
+
+alias b="tmux a -t background"
+alias w="tmux a -t wayne"
+alias new-b="tmux -2 new -s background"
+alias new-w="tmux -2 new -s wayne"
+
+# never use grep
+alias grep="ag"
+
+export PATH=$PATH:$HOME/go-src/go/bin
+
+# Map 'jj' to vi-mode
+bindkey -M viins 'jj' vi-cmd-mode
